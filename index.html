@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hard Store</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Hard Store</a>
+        <span class="navbar-text">Delivery in 30 minutes </span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-inline mx-auto my-2 my-lg-0">
+                <input class="form-control mr-sm-2" style="width: 300px;" type="search" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">My Cart (0)</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="banner">
+        <div class="banner-text">
+            <h1>Get your hardware at your doorstep</h1>
+            <p>Delivering quality products at your doorstep in just 30 minutes</p>
+        </div>
+        <style>
+            .banner {
+                background-image: url("https://www.fernandeslumber.com/images/departments/plumbing-supplies.jpg");
+                background-size: cover;
+                background-position: center;
+                height: 300px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #121213;
+                text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                border-radius: 20px;
+                /* add this line to give rounded corners */
+            }
+
+            .banner background-image {
+                filter: brightness(0.8) blur(8px);
+                /* reduce brightness by 20% and apply blur */
+                -webkit-filter: brightness(0.8) blur(8px);
+                /* for Safari and Chrome */
+
+            }
+
+            .banner-text {
+                text-align: center;
+                padding: 20px;
+                color: rgb(7, 7, 252);
+            }
+
+            .banner-text h1 {
+                font-size: 36px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .banner-text p {
+                font-size: 18px;
+                margin-bottom: 20px;
+                font-weight: bold;
+            }
+        </style>
+    </div>
+    <!-- </banner> -->
+    <div class="category">
+        <div class="category-list">
+            <div class="category-item">
+                <img src="https://5.imimg.com/data5/CS/JF/OZ/SELLER-36252158/plumbing-accessories-500x500.jpg"
+                    alt="Plumbing Products">
+                <h5>Plumbing Products</h5>
+            </div>
+            <div class="category-item">
+                <img src="https://buildingandinteriors.com/wp-content/uploads/2022/08/orientelctric497.jpg"
+                    alt="Electric Products">
+                <h5>Electric Products</h5>
+            </div>
+            <div class="category-item">
+                <img src="https://www.nerolac.com/sites/default/files/2024-03/Benefits-of-automated-painting-tools-for-home-painting-H3-%282%29.webp"
+                    alt="Painting Products">
+                <h5>Painting Products</h5>
+            </div>
+            <div class="category-item">
+                <img src="https://constrofacilitator.com/wp-content/uploads/2021/09/Construction-Materials.jpg"
+                    alt="Construction Products">
+                <h5>Construction Products</h5>
+            </div>
+            <div class="category-item">
+                <img src="https://media.smallbiztrends.com/2022/11/carpenter-tools.png" alt="Carpenter Products">
+                <h5>Carpenter Products</h5>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .category {
+            overflow-x: auto;
+            padding: 20px;
+        }
+
+        .category-list {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+        }
+
+        .category-item {
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .category-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .category-item h5 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* Add this media query to increase image size only on web view */
+        @media (min-width: 768px) {
+            .category-item img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+    <!-- /category -->
+    <div class="products">
+        <h2>Plumbing Products</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/618FOo+RAoL._AC_UF1000,1000_QL80_.jpg"
+                    alt="Waterman Aria Sink Cock Tap">
+                <h5>Waterman Aria Sink Cock Tap</h5>
+                <p>₹1,900</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://media.takealot.com/covers_images/15cb6d27f6704edcb9898fe1813ebeea/s-pdpxl.file"
+                    alt="Product Image">
+                <h5>Smooth Golden Brass Water Tap,</h5>
+                <p>₹1,900</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://5.imimg.com/data5/YA/PO/TD/SELLER-72568829/jaquar-bathroom-fittings.jpg"
+                    alt="Jaquar Bathroom Fittings">
+                <h5>Jaquar Bathroom Fittings</h5>
+                <p>₹2,500</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://hindware.com/wp-content/uploads/2021/05/2-768x421.png"
+                    alt="Hindware Atlantic Water Closet">
+                <h5>Hindware Atlantic Water Closet</h5>
+                <p>₹8,500</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://5.imimg.com/data5/SELLER/Default/2021/5/WZ/YI/BG/91686194/cera-wall-mount-wash-basin-1000x1000.png"
+                    alt="Cera Sanitaryware Wall Mounted Basin">
+                <h5>Cera Sanitaryware Wall Mounted Basin</h5>
+                <p>₹3,200</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://th.bing.com/th/id/OIP.qmPjWOYx2TAcoOMbxu65igHaHa?rs=1&pid=ImgDetMain"
+                 alt="Parryware Cascade Shower">
+                <h5>Parryware Cascade Shower</h5>
+                <p>₹1,800</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://th.bing.com/th/id/OIP.e2_FfVbJgUrXhpqWmLNswAHaIV?w=1600&h=1800&rs=1&pid=ImgDetMain"
+                 alt="Grohe Eurosmart Basin Mixer">
+                <h5>Grohe Eurosmart Basin Mixer</h5>
+                <p>₹4,500</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://5.imimg.com/data5/LH/EU/NP/SELLER-8118897/cpvc-ball-valve-500x500.jpg" alt="Supreme 20mm CPVC Ball Valve">
+                <h5>Supreme 20mm CPVC Ball Valve</h5>
+                <p>₹182</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://cdn.moglix.com/p/5siuB1NPi0EEk-xxlarge.jpg" alt="Cera Swank Modular Stainless Steel Thermostatic">
+                <h5>Cera Swank Modular Stainless Steel Thermostatic</h5>
+                <p>₹50,399</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+        </div>
+
+        <h2>Electric Products</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://cdn.moglix.com/p/iiGriuHtcSI65-xxlarge.jpeg"
+                    alt="Microtek Superpower 1100 12A (12V) DG Inverter UPS">
+                <h5>Microtek Superpower 1100 12A (12V) DG Inverter UPS</h5>
+                <p>₹5,199</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://www.jvelectric.co.in/stores/image/cache/catalog/Havells%20Wires-300x300.jpg"
+                    alt="Havells Wire 90 Metres 2.5Sqmm">
+                <h5>Havells Wire 90 Metres 2.5Sqmm</h5>
+                <p>₹2,257</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://rukminim2.flixcart.com/image/750/900/xif0q/plumbing-pipe/f/y/8/15-10-foot-copper-pipe-for-air-conditioner-1-4-1-2-4-mtr-wire-1-original-imaggtjzk7zcrttu.jpeg?q=20&crop=false"
+                    alt="COPPER PIPE FOR AIR CONDITIONER">
+                <h5>COPPER PIPE FOR AIR CONDITIONER</h5>
+                <p>₹2,478</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://5.imimg.com/data5/SELLER/Default/2022/3/ZC/YF/MY/33586745/havells-30a-1000v-dc-fuse-holder-500x500.jpg"
+                    alt="Havells 30A 1000V DC Fuse Holder">
+                <h5>Havells 30A 1000V DC Fuse Holder</h5>
+                <p>₹135</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://havells.com/media/catalog/product/cache/2051dfe7399bbb12fcdb3313c6f79cc4/g/h/ghgdicsg100.jpg"
+                    alt="Komfi Dry Iron">
+                <h5>Komfi Dry Iron</h5>
+                <p>₹ 800</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://havells.com/media/catalog/product/cache/2051dfe7399bbb12fcdb3313c6f79cc4/g/h/ghrofckn290_1.jpg"
+                 alt="Hestio 11 Wave Fin OFR">
+                <h5>Hestio 11 Wave Fin OFR</h5>
+                <p>₹ 13,399</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://havells.com/media/catalog/product/cache/2051dfe7399bbb12fcdb3313c6f79cc4/f/h/fhwpcptwhy16_2.jpg"
+                 alt="Platina">
+                <h5>Platina</h5>
+                <p>₹ 3,924</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://havells.com/media/catalog/product/cache/2051dfe7399bbb12fcdb3313c6f79cc4/f/h/fhspcnswhy16_1.jpg"
+                 alt="Sprint">
+                <h5>Sprint</h5>
+                <p>₹ 4,632</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://havells.com/media/catalog/product/cache/2051dfe7399bbb12fcdb3313c6f79cc4/g/h/ghwebapwh005.jpg"
+                 alt="Breaa Tankless Electric Water Heater">
+                <h5>Breaa Tankless Electric Water Heater</h5>
+                <p>₹ 10,190</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+        </div>
+
+        <h2>Painting Products</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/61GJI3KdwHL._SX679_.jpg"
+                    alt="Nippon Paint 1L Atom Fibra 2 In 1">
+                <h5>Nippon Paint 1L Atom Fibra 2 In 1</h5>
+                <p>₹307</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/61f+a59GEaL._SX679_.jpg"
+                    alt="Asianpaints Trucare 2X Extension Pole for Painting Rollers 3 Meter (10ft)">
+                <h5>Asianpaints Trucare 2X Extension Pole for Painting Rollers 3 Meter (10ft)</h5>
+                <p>₹2,257</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/41jNhFVsLjL.jpg"
+                    alt="Apollo 9 Inches Application Roller with Tray Combo Set">
+                <h5>Apollo 9 Inches Application Roller with Tray Combo Set</h5>
+                <p>₹330</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/71PAiuIEuWL._SX679_.jpg"
+                    alt="Dulux Velvet Touch Pearl GLO Interior Emulsion Paint">
+                <h5>Dulux Velvet Touch Pearl GLO Interior Emulsion Paint</h5>
+                <p>₹135</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/71W6HFID1DL._SX679_.jpg"
+                    alt="Nix Spectro 2 Spectrophotometer">
+                <h5>Nix Spectro 2 Spectrophotometer</h5>
+                <p>₹800</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/61GZUdd7ZbL._SX679_.jpg"
+                 alt="Dulux Simply Refresh Spray Paint">
+                <h5>Dulux Simply Refresh Spray Paint</h5>
+                <p>₹260</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/712nydzeG7L._SX679_.jpg"
+                 alt="INGCO Paint Sprayer">
+                <h5>INGCO Paint Sprayer</h5>
+                <p>₹1,799</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/610kyEWP+4L._SX679_.jpg"
+                 alt="Dulux Simply Refresh Wall Filler">
+                <h5>Dulux Simply Refresh Wall Filler</h5>
+                <p>₹256</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/71mxgdFUIbL._SX522_.jpg"
+                 alt="VazzLox Wall Repair Paste Paint Wall Putty Paste Crack Filler">
+                <h5>VazzLox Wall Repair Paste Paint Wall Putty Paste Crack Filler</h5>
+                <p>₹348</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+        </div>
+
+        <h2>Construction Products</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/71kFR8kXa3L._SX522_.jpg"
+                    alt="DR. FIXIT 201 Crack X Paste-1Kg, Ready to use crack filler for internal & external surface cracks on roofs,wall, Flexible Putty with excellent Bonding">
+                <h5>DR. FIXIT 201 Crack X Paste-1Kg</h5>
+                <p>₹379</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/71NmPJLXJ4L._SX522_.jpg"
+                    alt="Fiber Glass Mesh - (145 Gsm X(H)1 Meter X(L)50 Meter) ">
+                <h5>Fiber Glass Mesh - (145 Gsm X(H)1 Meter X(L)50 Meter)</h5>
+                <p>₹3,086</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://d3vpmhw8imxmio.cloudfront.net/product-variants/3000000819/3000000819/3000000819_1-650x650.webp"
+                    alt="SIMERO CALACATTA PGVT VITRIFIED 600X1200 9MM">
+                <h5>SIMERO CALACATTA PGVT VITRIFIED 600X1200 9MM</h5>
+                <p>₹330</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://5.imimg.com/data5/LU/KD/MY-53176023/ultratech-cement-500x500.jpg"
+                    alt=" Ultra Tech Cement, Packaging Size(Kg): 50kg">
+                <h5> Ultra Tech Cement, Packaging Size(Kg): 50kg</h5>
+                <p>₹390</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://d3vpmhw8imxmio.cloudfront.net/product-variants/3000002358/3000002358/3000002358_2-650x650.webp"
+                    alt="SOMANY GRANDE GEMSTONE HONEY FP 600X1200MM 9MM">
+                <h5>SOMANY GRANDE GEMSTONE HONEY FP 600X1200MM 9MM</h5>
+                <p>₹915</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://d3vpmhw8imxmio.cloudfront.net/product-variants/4000001460/4000001459_1-650x650.webp"
+                 alt="ASIAN PAINTS ROYALE PLAY METALLICS SILVER PM1 1 LT">
+                <h5>ASIAN PAINTS ROYALE PLAY METALLICS SILVER PM1 1 LT</h5>
+                <p>₹1165</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="data:image/jpeg;base64,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
+                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"
+                 alt="Iron Steel Bar, Single Piece Length: 18 meter">
+                <h5>Iron Steel Bar, Single Piece Length: 18 meter</h5>
+                <p>₹5,000</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="data:image/jpeg;base64,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
+                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"
+                 alt="Dulux Simply Refresh Wall Filler">
+                <h5>Sand Lime Bricks</h5>
+                <p>₹500</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://3.imimg.com/data3/RO/NV/GLADMIN-623/bricks-250x250.jpg"
+                 alt="Red Brick">
+                <h5>Red Bricks Per Pic Price</h5>
+                <p>₹5</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+        </div>
+
+        <h2>Carpenter Products</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="data:image/jpeg;base64,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
+                /7i6Jjnt4KLEz0zhbl3DT+mqDjF518Lv8g9MW+evReJy9NHyV3hqmWqxOicXZz+WwWMt5eevC3qafjs5OiY5G2aOexpDTFjuaRu3KY/DXtQf2FpC39Dp3FVeinGYXCX6fvmmmiZTivcrmiquInKqcp9FXNPwLfny9PmdGYjR+m/PVoHGxPTGJwuIw1Ux7YmuPyQTltyM0njK7NyzobAWJt03IuRgcTayvzM05TVnTRlllPTn0pxXn1fU+QPZWjfccL+3S37WcmsDVhcHhMNVltWcNYs1ZdG1TRETubNuOVAFAAAAAAAAAAAAAAAABTJUBTZNlUBbsmxHoXALdiPQbEehcAt+Tj0GxHohcAZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/9k="
+                    alt="BHUTAN TUFF 35MM BWP F/DOOR 82X42 SQFT 35MM">
+                <h5>BHUTAN TUFF 35MM BWP F/DOOR 82X42 SQFT 35MM</h5>
+                <p>₹4,253</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://d3vpmhw8imxmio.cloudfront.net/product-variants/1000005496/EDITING/1000005496_1-650x650.webp"
+                    alt="KARCHER WV 1 PLUS *EU WINDOW VAC CLEANER">
+                <h5>KARCHER WV 1 PLUS *EU WINDOW VAC CLEANER</h5>
+                <p>₹5131</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://4.imimg.com/data4/II/BI/MY-5113363/carpenter-masking-tape-250x250.png"
+                    alt="Off White 3M Carpenter Masking Tape">
+                <h5>Off White 3M Carpenter Masking Tape</h5>
+                <p>₹30</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://5.imimg.com/data5/YI/RL/AT/SELLER-1586727/double-door-lrg-500x500.jpg"
+                    alt="Steel IL Gi SM 50, Thickness: 88 mm">
+                <h5>Steel IL Gi SM 50, Thickness: 88 mm</h5>
+                <p>₹41,480</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://5.imimg.com/data5/SELLER/Default/2024/5/418786276/CH/SD/YL/96487495/tata-pravesh-windows-500x500.jpeg"
+                    alt="Steel Powder Coated Tata Pravesh Windows, For Residential, Modern">
+                <h5>Steel Powder Coated Tata Pravesh Windows, For Residential, Modern</h5>
+                <p>₹800</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://5.imimg.com/data5/SELLER/Default/2021/6/QE/VO/AF/11344101/eternia-etp-sd-series-aluminum-sliding-door-500x500.png"
+                 alt="Eternia ETP-SD Series Aluminum Sliding Door">
+                <h5>Eternia ETP-SD Series Aluminum Sliding Door</h5>
+                <p>₹1,200</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/713XbDI2pPL._SX679_.jpg"
+                 alt="Homdum Claw Hammer 1/2 Lb and Concrete Nails 1 1/2inch (38 mm) Combo">
+                <h5>Homdum Claw Hammer 1/2 Lb and Concrete Nails 1 1/2inch (38 mm) Combo</h5>
+                <p>₹379</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/411T3HHF4kL._SX522_.jpg"
+                 alt="Get Reliable Fixing Solutions with ICFS Nylon Hammer Fixing Plug with Screw (Pack of 25)">
+                <h5>Get Reliable Fixing Solutions with ICFS Nylon Hammer Fixing Plug with Screw (Pack of 25)</h5>
+                <p>₹289</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <div class="bookmark" data-bookmarked="false">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/81JUXeRYiRL._SX522_.jpg"
+                 alt="Bosch AG4 Metal 4-inch Cut Off Wheel Set (White, Pack of 10)">
+                <h5>Bosch AG4 Metal 4-inch Cut Off Wheel Set (White, Pack of 10)</h5>
+                <p>₹250</p>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.bookmark').click(function () {
+                var bookmark = $(this);
+                var bookmarked = bookmark.data('bookmarked');
+                bookmark.data('bookmarked', !bookmarked);
+                if (bookmarked) {
+                    bookmark.find('i').css('color', '#ccc');
+                } else {
+                    bookmark.find('i').css('color', '#ff0000');
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .products {
+            padding: 20px;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 10px;
+        }
+
+        .product-item {
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 150px;
+        }
+
+        .product-item img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .product-item h5 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .product-item p {
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .product-item button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #337ab7;
+            color: #fff;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .product-item button:hover {
+            background-color: #23527c;
+        }
+
+        .bookmark {
+            /* position: absolute; */
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            margin-left: 70%;
+        }
+
+        .bookmark i {
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        .bookmark[data-bookmarked="true"] i {
+            color: #ff0000;
+        }
+
+        /* Add this media query to increase image size only on web view */
+        @media (min-width: 768px) {
+            .product-item {
+                width: 200px;
+            }
+
+            .product-item img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum
+                        magna sed, convallis ex.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <ul>
+                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="copyright">Copyright &copy; 2023 Hard Store. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .footer {
+            background-color: #545454;
+            /* dark gray background */
+            color: #fff;
+            /* white text */
+            padding: 20px;
+            /* add some padding to make it look nicer */
+            text-align: center;
+            /* center the text */
+            clear: both;
+            /* make sure the footer clears any floats */
+            position: relative;
+            /* make it relative so we can position the copyright text */
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            /* add some space between paragraphs */
+        }
+
+        .footer li {
+            list-style: none;
+            align-items: center;
+        }
+
+        .footer .copyright {
+            font-size: 12px;
+            /* make the copyright text smaller */
+            color: #666;
+            /* gray text */
+            position: absolute;
+            /* position the copyright text at the bottom right */
+            bottom: 10px;
+            right: 20px;
+            text-align: center;
+        }
+        .col-md-12 p{
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
